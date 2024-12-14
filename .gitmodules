@@ -1,0 +1,3 @@
+[submodule "srcs/ComfyUI"]
+	path = srcs/ComfyUI
+	url = git@github.com:comfyanonymous/ComfyUI.git

@@ -1,6 +1,6 @@
 { pkgs }:
 let python = pkgs.callPackage ./python.nix { };
-in with python.pkgs; [
+packages = with python.pkgs; [
   torch-bin
   triton-bin
   torchvision-bin
@@ -37,4 +37,9 @@ in with python.pkgs; [
   scikit-image
   piexif
   segment-anything
-] ++ [ python ]
+] ++ [ python ];
+
+comfyui = pkgs.writeShellScriptBin "comfyui" ''
+  echo 'ComfyUi'
+'';
+in [ comfyui ] ++ packages  
